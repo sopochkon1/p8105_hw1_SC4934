@@ -9,24 +9,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Problem 1
 
-```{r cars}
+```{r chunk_load_data}
 data("penguins", package = "palmerpenguins")
 ```
 
+## description: 
 The penguins data set contains 8 variables. The variables contain information on individual penguins, including the species, island where they are located, bill length in mm, bill depth in mm, etc. 
-
-include more detail above:
 
 There are 344 rows `nrow` and 8 columns `ncol` in the data set.
 
 The mean flipper length is 200.9152 mm. 
 
-```{r}
+```{r chunk_mean }
 mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 
 
-Scatter plot: 
+## Scatter Plot: 
 
 ```{r chunk_scatterplot, message = FALSE, warning=FALSE}
 library(ggplot2)
@@ -36,5 +35,30 @@ ggsave ("scatter_plot.pdf")
 ```
 
 
-## Problem 2
+# Problem 2
+
+## dataframe:
+```{r chunk_dataframe}
+library(tidyverse)
+df <- tibble(
+  var_norm = rnorm(n=10),
+  var_logic = var_norm > 0,
+  var_char = c("one", "two","three","four","five","six","seven","eight","nine","ten"),
+  var_fac = factor(c("low","medium","high","low","medium","high","low","medium","high", "low" ))
+  )
+
+mean(df$var_norm)
+mean(df$var_logic)
+mean(df$var_char)
+mean(df$var_fac)
+
+
+```
+
+
+
+
+
+```{r, eval=FALSE}
+
 
