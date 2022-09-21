@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r chunk_library, echo=FALSE}
+```{r chunk_library, echo=FALSE, results = "hide", message = FALSE} 
 library(ggplot2)
 library(tidyverse)
 ```
