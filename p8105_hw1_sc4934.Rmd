@@ -68,7 +68,8 @@ mean(pull(df, var_fac))
 
 ```
 
+taking the mean of `var_norm`, a variable with a random sample from a standard normal distribution worked.
 
+taking the mean of `var_logic`, a logical variable also worked. 
 
-
-
+R is not able to take the mean of `var_char` and `var_fac`, as they are character and factor variables. 
