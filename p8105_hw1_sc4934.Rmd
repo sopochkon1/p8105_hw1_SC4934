@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r chunk_library, echo=FALSE, results = "hide", message = FALSE} 
+```{r chunk_library, results = "hide", message = FALSE} 
 library(ggplot2)
 library(tidyverse)
 ```
@@ -54,13 +54,21 @@ df <- tibble(
   var_fac = factor(c("low","medium","high","low","medium","high","low","medium","high", "low" ))
   )
 
-mean(df$var_norm)
-mean(df$var_logic)
-mean(df$var_char)
-mean(df$var_fac)
+```
 
+
+## means
+
+
+```{r}
+mean(pull(df, var_norm))
+mean(pull(df, var_logic))
+mean(pull(df, var_char))
+mean(pull(df, var_fac))
 
 ```
+
+
 
 
 
