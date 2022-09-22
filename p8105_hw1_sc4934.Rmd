@@ -73,3 +73,22 @@ taking the mean of `var_norm`, a variable with a random sample from a standard n
 taking the mean of `var_logic`, a logical variable also worked. 
 
 R is not able to take the mean of `var_char` and `var_fac`, as they are character and factor variables. 
+
+
+## convert variables
+
+```{r chunk_convert,results = "hide", message=FALSE, warning=FALSE}
+as.numeric(df$var_logic)
+as.numeric(df$var_char)
+as.numeric(df$var_fac)
+```
+
+I am convert the logical and factor variables, but not the character variable. 
+
+
+
+ Does this help explain what happens when you try to take the mean?
+
+
+
+
