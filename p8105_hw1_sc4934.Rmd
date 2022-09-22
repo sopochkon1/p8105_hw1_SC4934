@@ -48,7 +48,7 @@ ggsave ("scatter_plot.pdf")
 ## dataframe:
 ```{r chunk_dataframe}
 df <- tibble(
-  var_norm = rnorm(n=10),
+  var_norm = rnorm(n = 10),
   var_logic = var_norm > 0,
   var_char = c("one", "two","three","four","five","six","seven","eight","nine","ten"),
   var_fac = factor(c("low","medium","high","low","medium","high","low","medium","high", "low" ))
@@ -83,11 +83,14 @@ as.numeric(df$var_char)
 as.numeric(df$var_fac)
 ```
 
-I am convert the logical and factor variables, but not the character variable. 
+I am able to convert the logical and factor variables, but not the character variable. 
 
+I was able to convert the factor variable because each numeric value (1,2, and 3) is attached to the levels I defined (low,medium,high). therefore, after converting it to the numeric format, I can take the mean. 
 
+I was able to convert the logical variable as it can be converted to a 1 or 0 depending of if it is true or false. I was able to to take the mean before converting it to numeric as R recognized the 1 and 0 values.  
 
- Does this help explain what happens when you try to take the mean?
+It explains why I was not able to take the mean of the character variable, as there is no numeric value attached to it, and I can not convert it to a numeric variable.
+
 
 
 
