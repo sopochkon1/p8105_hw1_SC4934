@@ -23,10 +23,17 @@ data("penguins", package = "palmerpenguins")
 ```
 
 ## description: 
-The penguins data set contains 8 variables. The variables contain information on individual penguins, including the species, island where they are located, bill length in mm, bill depth in mm, etc. 
+The penguins data set contains 8 variables. The variables contain information on individual penguins, including the species, island where they are located, bill length in mm, bill depth in mm, body mass in g, etc. 
 
 There are 344 rows `nrow` and 8 columns `ncol` in the data set.
 
+```{r, chunk_skim, results = "hide", message = FALSE}
+skimr::skim(penguins)
+```
+
+we can use the `skim` command to look closer at the variables. For example, we can see that there are 3 factor and 5 numeric column types in the dataset. It seems like the most missing values are in the `sex` variable. 
+
+## mean:
 The mean flipper length is 200.9152 mm. 
 
 ```{r chunk_mean }
@@ -87,7 +94,7 @@ I am able to convert the logical and factor variables, but not the character var
 
 I was able to convert the factor variable because each numeric value (1,2, and 3) is attached to the levels I defined (low,medium,high). therefore, after converting it to the numeric format, I can take the mean. 
 
-I was able to convert the logical variable as it can be converted to a 1 or 0 depending of if it is true or false. I was able to to take the mean before converting it to numeric as R recognized the 1 and 0 values.  
+I was able to convert the logical variable as it can be converted to a 1 or 0 depending of if it is true or false. I was able to to take the mean before converting it to numeric, as R assigned boolean values depending on if it is True or False.
 
 It explains why I was not able to take the mean of the character variable, as there is no numeric value attached to it, and I can not convert it to a numeric variable.
 
